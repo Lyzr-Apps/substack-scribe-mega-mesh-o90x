@@ -126,19 +126,24 @@ const SAMPLE_ARTICLE: ArticleData = {
 
 const SAMPLE_NOTES: NoteData[] = [
   {
-    content: 'The average knowledge worker checks email 74 times per day. The global cost of context-switching? $450 billion annually.\n\nBut the real cost is not economic -- it is personal. We are losing our capacity for deep work.\n\nMy new article explores the hidden economics of attention.',
-    character_count: 264,
-    hook_type: 'statistic'
+    content: 'I tracked my attention for 7 days straight last March.\n\nThe results gutted me: 73 email checks per day. 147 app switches. 11 minutes was my longest unbroken focus block.\n\nI was a productivity writer who could not focus for 12 minutes.\n\nThat spreadsheet became the outline for everything I write about attention now. The data that embarrassed me turned into the thesis that changed my career.',
+    character_count: 374,
+    hook_type: 'confession'
   },
   {
-    content: 'Hot take: In 5 years, the most valuable skill will not be coding, writing, or design.\n\nIt will be the ability to focus for more than 30 minutes without checking your phone.\n\nI wrote about why your attention is the new currency.',
-    character_count: 228,
-    hook_type: 'hot take'
+    content: 'Everyone says "just turn off notifications." I did that for 6 months. My deep work time increased by exactly 4 minutes per day.\n\nThe real lever was redesigning my physical environment -- moving my phone charger to another room added 47 minutes of focus daily.\n\nThe $450 billion attention crisis is not a software problem. It is an architecture problem.',
+    character_count: 351,
+    hook_type: 'comparison_flip'
   },
   {
-    content: 'What if I told you there is a $450 billion problem hiding in plain sight?\n\nIt is not a market crash. It is not a supply chain issue.\n\nIt is the fact that we have collectively forgotten how to pay attention.\n\nNew deep dive on my Substack.',
-    character_count: 241,
-    hook_type: 'teaser'
+    content: '3:47 AM, a Tuesday in November. I was rewriting the same paragraph for the ninth time.\n\nHerbert Simon wrote about this exact moment in 1971 -- the paradox of drowning in information while starving for attention. Fifty-three years later, I was living proof.\n\nI closed every tab. Opened a blank document. Wrote 2,200 words in 94 minutes.\n\nThe article that came from that night has been read 31,000 times. The secret was not discipline. It was desperation.',
+    character_count: 448,
+    hook_type: 'moment_story'
+  },
+  {
+    content: 'Context-switching costs the global economy $450 billion annually. That number comes from a McKinsey study most people cite but few actually read.\n\nThe buried finding: 68% of that cost hits individual creators and knowledge workers, not corporations. The attention tax falls hardest on the people least able to afford it.',
+    character_count: 318,
+    hook_type: 'data_truth'
   }
 ]
 
@@ -676,7 +681,32 @@ export default function Page() {
       : ''
     const fullText = `${editTitle}\n\n${editSubtitle}\n\n${sectionsText}`
 
-    const message = `Generate 2-4 Substack Notes from this article to promote it. Article title: ${editTitle}. Article content: ${fullText}`
+    const message = `Transform Newsletter Content into High-Converting Substack Notes.
+
+Take the core insights from the following article and create 3-5 Substack Notes.
+
+ABSOLUTE PROHIBITIONS - NEVER INCLUDE:
+- Rhetorical questions (ZERO TOLERANCE) - No questions whatsoever. Every sentence must be a statement or observation.
+- Generic motivational endings
+- Rounded numbers (use exact figures)
+- "You can do it" variations
+- Questions disguised as statements
+
+Length Variety (MANDATORY) - Create a mix from: Micro (10-30 words), Short (30-80 words), Medium (80-150 words), Long (150-250 words).
+
+Each Note must include: Specific numbers/timelines, a transformation moment (before to after state), vulnerable middle, permission-giving ending (implied, not stated directly).
+
+Rotate between styles: The Confession, The Comparison Flip, The Moment Story, The Data Truth.
+
+Value Formulas (choose one per Note): Validation Formula, Permission Formula, Reality Check, Timeline Truth.
+
+Endings That Convert: Implied permission, specific hope with timeline, success reframe, vulnerable admission.
+
+FINAL CHECK: Contains ZERO questions, all statements are declarations, numbers are specific, no generic motivation, vulnerability is specific.
+
+Article Title: ${editTitle}
+Article Content:
+${fullText}`
 
     try {
       const result = await callAIAgent(message, NOTES_CREATOR_ID)
