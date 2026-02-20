@@ -1,0 +1,22 @@
+{
+  "agent_name": "Research Agent",
+  "agent_id": "6998e6496b8b4ea65c492919",
+  "description": "Searches the web for relevant facts, statistics, trends, and supporting information on the given topic",
+  "agent_type": "json",
+  "accessor": "result",
+  "auto_generated": true,
+  "response_schema": {
+    "research_summary": "string",
+    "key_facts": ["string"],
+    "statistics": ["string"],
+    "trends": ["string"],
+    "sources": ["string"]
+  },
+  "example_response": {
+    "research_summary": "sample string",
+    "key_facts": ["sample string"],
+    "statistics": ["sample string"],
+    "trends": ["sample string"],
+    "sources": ["sample string"]
+  }
+}

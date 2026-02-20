@@ -1,0 +1,60 @@
+{
+  "project": "Substack Content Studio",
+  "pattern": "manager-subagent-hybrid",
+  "agents": {
+    "content_orchestrator": {
+      "agent_id": "6998e65de1522e8a48d1d296",
+      "name": "Content Orchestrator",
+      "type": "manager",
+      "provider": "openai",
+      "model": "gpt-4.1",
+      "managed_agents": [
+        "6998e6496b8b4ea65c492919",
+        "6998e64a4657541456743d06",
+        "6998e64ae1522e8a48d1d292"
+      ]
+    },
+    "research_agent": {
+      "agent_id": "6998e6496b8b4ea65c492919",
+      "name": "Research Agent",
+      "type": "sub-agent",
+      "provider": "perplexity",
+      "model": "sonar-pro"
+    },
+    "article_drafting_agent": {
+      "agent_id": "6998e64a4657541456743d06",
+      "name": "Article Drafting Agent",
+      "type": "sub-agent",
+      "provider": "openai",
+      "model": "gpt-4.1"
+    },
+    "seo_headline_agent": {
+      "agent_id": "6998e64ae1522e8a48d1d292",
+      "name": "SEO & Headline Agent",
+      "type": "sub-agent",
+      "provider": "openai",
+      "model": "gpt-4.1"
+    },
+    "notes_creator_agent": {
+      "agent_id": "6998e66b6b8b4ea65c49291e",
+      "name": "Notes Creator Agent",
+      "type": "independent",
+      "provider": "openai",
+      "model": "gpt-4.1"
+    }
+  },
+  "agent_ids": [
+    "6998e65de1522e8a48d1d296",
+    "6998e6496b8b4ea65c492919",
+    "6998e64a4657541456743d06",
+    "6998e64ae1522e8a48d1d292",
+    "6998e66b6b8b4ea65c49291e"
+  ],
+  "response_schemas": {
+    "content_orchestrator": "response_schemas/content_orchestrator_response.json",
+    "research_agent": "response_schemas/research_agent_response.json",
+    "article_drafting_agent": "response_schemas/article_drafting_agent_response.json",
+    "seo_headline_agent": "response_schemas/seo_headline_agent_response.json",
+    "notes_creator_agent": "response_schemas/notes_creator_agent_response.json"
+  }
+}

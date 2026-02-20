@@ -1,0 +1,24 @@
+{
+  "agent_name": "SEO & Headline Agent",
+  "agent_id": "6998e64ae1522e8a48d1d292",
+  "description": "Optimizes article title, subtitle, meta description, and section headings for discoverability and engagement",
+  "agent_type": "json",
+  "accessor": "result",
+  "auto_generated": true,
+  "response_schema": {
+    "optimized_title": "string",
+    "optimized_subtitle": "string",
+    "meta_description": "string",
+    "optimized_headings": ["string"],
+    "seo_keywords": ["string"],
+    "improvement_notes": "string"
+  },
+  "example_response": {
+    "optimized_title": "sample string",
+    "optimized_subtitle": "sample string",
+    "meta_description": "sample string",
+    "optimized_headings": ["sample string"],
+    "seo_keywords": ["sample string"],
+    "improvement_notes": "sample string"
+  }
+}

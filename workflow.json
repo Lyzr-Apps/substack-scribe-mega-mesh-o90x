@@ -1,0 +1,94 @@
+{
+  "workflow": {
+    "name": "Substack Content Studio",
+    "description": "A hybrid manager-subagent and independent agent workflow for creating polished Substack newsletter articles and promotional Notes",
+    "pattern": "manager-subagent-hybrid",
+    "nodes": [
+      {
+        "id": "input_node",
+        "type": "Input",
+        "label": "User Topic Input",
+        "nodeCategory": "input"
+      },
+      {
+        "id": "content_orchestrator",
+        "type": "Agent",
+        "label": "Content Orchestrator",
+        "nodeCategory": "agent",
+        "agent_id": "6998e65de1522e8a48d1d296",
+        "agent_type": "manager",
+        "provider": "openai",
+        "model": "gpt-4.1",
+        "temperature": 0.3,
+        "top_p": 1,
+        "managed_agents": [
+          "6998e6496b8b4ea65c492919",
+          "6998e64a4657541456743d06",
+          "6998e64ae1522e8a48d1d292"
+        ]
+      },
+      {
+        "id": "research_agent",
+        "type": "Agent",
+        "label": "Research Agent",
+        "nodeCategory": "agent",
+        "agent_id": "6998e6496b8b4ea65c492919",
+        "agent_type": "sub-agent",
+        "provider": "perplexity",
+        "model": "sonar-pro",
+        "temperature": 0.2,
+        "top_p": 1
+      },
+      {
+        "id": "article_drafting_agent",
+        "type": "Agent",
+        "label": "Article Drafting Agent",
+        "nodeCategory": "agent",
+        "agent_id": "6998e64a4657541456743d06",
+        "agent_type": "sub-agent",
+        "provider": "openai",
+        "model": "gpt-4.1",
+        "temperature": 0.7,
+        "top_p": 0.95
+      },
+      {
+        "id": "seo_headline_agent",
+        "type": "Agent",
+        "label": "SEO & Headline Agent",
+        "nodeCategory": "agent",
+        "agent_id": "6998e64ae1522e8a48d1d292",
+        "agent_type": "sub-agent",
+        "provider": "openai",
+        "model": "gpt-4.1",
+        "temperature": 0.5,
+        "top_p": 1
+      },
+      {
+        "id": "notes_creator_agent",
+        "type": "Agent",
+        "label": "Notes Creator Agent",
+        "nodeCategory": "agent",
+        "agent_id": "6998e66b6b8b4ea65c49291e",
+        "agent_type": "independent",
+        "provider": "openai",
+        "model": "gpt-4.1",
+        "temperature": 0.7,
+        "top_p": 0.95
+      },
+      {
+        "id": "output_node",
+        "type": "Output",
+        "label": "Final Output",
+        "nodeCategory": "end"
+      }
+    ],
+    "edges": [
+      { "source": "input_node", "target": "content_orchestrator" },
+      { "source": "content_orchestrator", "target": "research_agent" },
+      { "source": "content_orchestrator", "target": "article_drafting_agent" },
+      { "source": "content_orchestrator", "target": "seo_headline_agent" },
+      { "source": "content_orchestrator", "target": "notes_creator_agent" },
+      { "source": "notes_creator_agent", "target": "output_node" }
+    ]
+  }
+}

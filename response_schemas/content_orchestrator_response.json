@@ -1,0 +1,50 @@
+{
+  "agent_name": "Content Orchestrator",
+  "agent_id": "6998e65de1522e8a48d1d296",
+  "description": "Coordinates research, drafting, and SEO optimization sub-agents; aggregates their outputs into a single polished article draft",
+  "agent_type": "json",
+  "accessor": "result",
+  "auto_generated": true,
+  "response_schema": {
+    "title": "string",
+    "subtitle": "string",
+    "meta_description": "string",
+    "article_body": "string",
+    "sections": [
+      {
+        "heading": "string",
+        "content": "string"
+      }
+    ],
+    "seo_keywords": [
+      "string"
+    ],
+    "sources": [
+      "string"
+    ],
+    "topic_suggestions": [
+      "string"
+    ]
+  },
+  "example_response": {
+    "title": "sample string",
+    "subtitle": "sample string",
+    "meta_description": "sample string",
+    "article_body": "sample string",
+    "sections": [
+      {
+        "heading": "sample string",
+        "content": "sample string"
+      }
+    ],
+    "seo_keywords": [
+      "sample string"
+    ],
+    "sources": [
+      "sample string"
+    ],
+    "topic_suggestions": [
+      "sample string"
+    ]
+  }
+}

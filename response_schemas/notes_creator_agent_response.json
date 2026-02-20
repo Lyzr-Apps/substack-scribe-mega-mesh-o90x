@@ -1,0 +1,26 @@
+{
+  "agent_name": "Notes Creator Agent",
+  "agent_id": "6998e66b6b8b4ea65c49291e",
+  "description": "Generates 2-4 concise, engaging Substack Notes snippets derived from the completed article to promote it on the platform",
+  "agent_type": "json",
+  "accessor": "result",
+  "auto_generated": true,
+  "response_schema": {
+    "notes": [
+      {
+        "content": "string",
+        "character_count": "number",
+        "hook_type": "string"
+      }
+    ]
+  },
+  "example_response": {
+    "notes": [
+      {
+        "content": "sample string",
+        "character_count": 0,
+        "hook_type": "sample string"
+      }
+    ]
+  }
+}

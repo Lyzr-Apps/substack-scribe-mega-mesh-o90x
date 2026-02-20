@@ -1,0 +1,30 @@
+{
+  "agent_name": "Article Drafting Agent",
+  "agent_id": "6998e64a4657541456743d06",
+  "description": "Writes a full long-form Substack newsletter article using the research output and user-provided context or repurposed content",
+  "agent_type": "json",
+  "accessor": "result",
+  "auto_generated": true,
+  "response_schema": {
+    "title": "string",
+    "subtitle": "string",
+    "body": "string",
+    "sections": [
+      {
+        "heading": "string",
+        "content": "string"
+      }
+    ]
+  },
+  "example_response": {
+    "title": "sample string",
+    "subtitle": "sample string",
+    "body": "sample string",
+    "sections": [
+      {
+        "heading": "sample string",
+        "content": "sample string"
+      }
+    ]
+  }
+}
